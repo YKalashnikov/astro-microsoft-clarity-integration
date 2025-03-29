@@ -6,17 +6,17 @@ Astro Clarity is a lightweight wrapper that seamlessly integrates Clarity analyt
 
 ### npm
 ```bash
-npm install astro-microsoft-clarity
+npm install astro-microsoft-clarity-integration
 ```
 
 ### Yarn
 ```bash
-yarn add astro-microsoft-clarity
+yarn add astro-microsoft-clarity-integration
 ```
 
 ### pnpm
 ```bash
-pnpm add astro-microsoft-clarity
+pnpm add astro-microsoft-clarity-integration
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ pnpm add astro-microsoft-clarity
 ```js
 // astro.config.mjs (or .ts if you're using TypeScript)
 import { defineConfig } from 'astro/config';
-import clarityIntegration from 'astro-microsoft-clarity'; // Imported from an npm package
+import clarityIntegration from 'astro-microsoft-clarity-integration'; // Imported from an npm package
 
 export default defineConfig({
   integrations: [
