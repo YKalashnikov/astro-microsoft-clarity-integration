@@ -22,7 +22,9 @@
     "analytics",
     "microsoft",
     "astro",
-    "astro plugin"
+    "astro plugin",
+    "withastro",
+    "astro-component"
   ],
   "scripts": {},
   "devDependencies": {
