@@ -2,8 +2,8 @@
   "name": "astro-microsoft-clarity-integration",
   "description": "Microsoft Clarity analytics in Astro site",
   "author": "Iurii Kalashnikov",
-  "version": "0.0.1",
-  "homepage": "https://github.com/YKalashnikov#readme",
+  "version": "1.0.1",
+  "homepage": "https://github.com/YKalashnikov/astro-microsoft-clarity-integration",
   "type": "module",
   "repository": {
     "type": "git",
