@@ -7,7 +7,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YKalashnikov/astro-microsoft-clarity-integration"
+    "url": "git+https://github.com/YKalashnikov/astro-microsoft-clarity-integration.git"
   },
   "exports": {
     ".": "./index.ts",
