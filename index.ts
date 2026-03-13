@@ -1,6 +1,6 @@
 import type { AstroIntegration, InjectedScriptStage } from 'astro';
 
-type ClarityOptions = {
+export type ClarityOptions = {
   projectId: string;
   enabled?: boolean;
   scriptStage?: InjectedScriptStage;
@@ -19,7 +19,17 @@ export default function clarityIntegration({
   defer = false,
   customAttrs = {},
 }: ClarityOptions): AstroIntegration {
-  if (!projectId) console.error('Clarity Integration requires a valid projectId');
+  if (enabled && !projectId) {
+    throw new Error('Clarity Integration requires a valid projectId');
+  }
+
+  const serializedProjectId = JSON.stringify(projectId);
+  const customAttrLines = Object.entries(customAttrs)
+    .map(([key, value]) => {
+      const normalizedKey = key.startsWith('data-') ? key.slice(5) : key;
+      return `t.setAttribute(${JSON.stringify(`data-${normalizedKey}`)}, ${JSON.stringify(value)});`;
+    })
+    .join('\n');
 
   return {
     name: 'astro-clarity',
@@ -35,12 +45,10 @@ export default function clarityIntegration({
             t.async = ${async};
             t.defer = ${defer};
             ${debug ? `console.debug("Clarity script injected:", i);` : ''}
-            ${Object.entries(customAttrs)
-              .map(([key, value]) => `t.setAttribute("data-${key}", "${value}");`)
-              .join('\n')}
+            ${customAttrLines}
             y = l.getElementsByTagName(r)[0];
             y.parentNode.insertBefore(t, y);
-          })(window, document, "clarity", "script", "${projectId}");
+          })(window, document, "clarity", "script", ${serializedProjectId});
         `;
 
         injectScript(scriptStage, scriptContent);
