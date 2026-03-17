@@ -1,13 +1,12 @@
-# Publish the package to npm when a GitHub release is published.
-
-name: Node.js Package
+name: CI
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [main]
+  pull_request:
 
 jobs:
-  publish-npm:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -18,9 +17,6 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
-          registry-url: https://registry.npmjs.org/
       - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck
       - run: pnpm run test
-      - run: npm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}

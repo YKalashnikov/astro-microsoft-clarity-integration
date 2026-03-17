@@ -60,5 +60,7 @@ export default defineConfig({
 ## Notes
 
 - `enabled: import.meta.env.PROD` is a good default if you only want analytics in production.
-- `projectId` is required. The integration now fails fast during Astro config setup instead of injecting a broken script.
+- `projectId` is required. The integration fails fast during Astro config evaluation instead of injecting a broken script.
+- `customAttrs` keys are normalized to `data-*` attributes, so `region: 'us'` becomes `data-region="us"`.
+- The package is published as compiled JavaScript with generated TypeScript declarations.
 - Published releases are pushed to npm when a GitHub release is marked as published.

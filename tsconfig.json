@@ -1,8 +1,14 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": ["src"],
+  "include": ["index.ts"],
   "exclude": ["dist"],
   "compilerOptions": {
-    "outDir": "dist"
+    "allowImportingTsExtensions": false,
+    "noEmit": false,
+    "outDir": "dist",
+    "rootDir": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
   }
 }
