@@ -34,7 +34,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "astro": "^6.0.3"
