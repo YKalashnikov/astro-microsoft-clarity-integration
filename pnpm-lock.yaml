@@ -11,6 +11,9 @@ importers:
       astro:
         specifier: ^6.0.3
         version: 6.0.3(rollup@4.59.0)(typescript@5.8.2)
+      typescript:
+        specifier: ^5.8.2
+        version: 5.8.2
 
 packages:
 
@@ -2830,8 +2833,7 @@ snapshots:
   tslib@2.8.1:
     optional: true
 
-  typescript@5.8.2:
-    optional: true
+  typescript@5.8.2: {}
 
   ufo@1.6.3: {}
 
