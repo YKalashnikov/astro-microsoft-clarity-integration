@@ -1,11 +1,16 @@
 {
-  "extends": "astro/tsconfigs/strict",
   "include": ["index.ts"],
   "exclude": ["dist"],
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": ".",
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "outDir": "dist",
+    "rootDir": "."
   }
 }
