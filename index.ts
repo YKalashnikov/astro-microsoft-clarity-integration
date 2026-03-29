@@ -47,7 +47,11 @@ export default function clarityIntegration({
             ${debug ? `console.debug("Clarity script injected:", i);` : ''}
             ${customAttrLines}
             y = l.getElementsByTagName(r)[0];
-            y.parentNode.insertBefore(t, y);
+            if (y && y.parentNode) {
+              y.parentNode.insertBefore(t, y);
+            } else {
+              l.head.appendChild(t);
+            }
           })(window, document, "clarity", "script", ${serializedProjectId});
         `;
 
