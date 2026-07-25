@@ -2,7 +2,7 @@
 
 Astro Clarity is a lightweight wrapper that seamlessly integrates Clarity analytics with Astro, making it effortless to track user interactions and performance metrics on your Astro-powered websites.
 
-Supports Astro `^4`, `^5`, and `^6`.
+Supports Astro `^4`, `^5`, `^6`, and `^7`.
 
 ## Installation
 
