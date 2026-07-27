@@ -5,6 +5,10 @@
   "version": "1.1.7",
   "homepage": "https://github.com/YKalashnikov/astro-microsoft-clarity-integration",
   "type": "module",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YKalashnikov/astro-microsoft-clarity-integration.git"
@@ -22,7 +26,9 @@
   },
   "files": [
     "dist",
-    "README.md"
+    "index.ts",
+    "README.md",
+    "CONTRIBUTING.md"
   ],
   "keywords": [
     "astro-integration",
@@ -36,6 +42,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "check": "tsc --noEmit",
     "prepack": "npm run build",
     "prepublishOnly": "npm run build"
   },

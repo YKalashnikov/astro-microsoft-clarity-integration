@@ -37,3 +37,4 @@ export default function clarityIntegration({ projectId, enabled = true, scriptSt
         },
     };
 }
+//# sourceMappingURL=index.js.map

@@ -62,3 +62,7 @@ export default defineConfig({
 - `enabled: import.meta.env.PROD` is a good default if you only want analytics in production.
 - `projectId` is required. The integration now fails fast during Astro config setup instead of injecting a broken script.
 - Published releases are pushed to npm when a GitHub release is marked as published.
+
+## Contributing
+
+Bug reports and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow, validation commands, and PR expectations.
